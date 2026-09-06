@@ -1,4 +1,21 @@
 import streamlit as st
+
+# 1. 添加这行配置，禁止浏览器对 Streamlit DOM 节点进行自动翻译冲突
+st.set_page_config(
+    page_title="微信流水贷前风控分析系统",
+    layout="centered"
+)
+
+# 2. 注入 CSS 规避某些翻译插件对 DOM 的侵入
+st.markdown('<html lang="zh-CN" class="notranslate" translate="no">', unsafe_allow_html=True)
+
+import pdfplumber
+import re
+
+st.title("微信流水贷前风控分析系统")
+# ... 下面保持您原来的代码不变 ...
+
+import streamlit as st
 import pdfplumber
 import re
 
